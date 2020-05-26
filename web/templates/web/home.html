@@ -1,0 +1,108 @@
+{% extends 'web/base.html' %}
+
+
+{% block content %}
+
+{% load static %}
+
+	<!-- Hero section -->
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+            {% for i in memo %}
+			<div class="hs-item set-bg" data-setbg="{{i.img.url}}">
+				<div class="hs-text">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-8">
+								<div class="hs-subtitle">College of Exellance</div>
+								<h2 class="hs-title">A Book  knowledge pays the best interest.</h2>
+								<p class="hs-des">Education is not just about going to school and getting a degree. It's about widening your<br> knowledge and absorbing the truth about life. Knowledge is power.</p>
+								<div class="site-btn">GET STARTED</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+            {% endfor %}
+	</section>
+	<!-- Hero section end -->
+
+
+	
+
+
+	<!-- Services section -->
+	<section class="service-section spad">
+		<div class="container services">
+			<div class="section-title text-center">
+				<h3>OUR SERVICES</h3>
+				<p>We provides the Efficient Way of Learning</p>
+			</div>
+			<div class="row">
+				<div class="col-lg-4 col-sm-6 service-item">
+					<div class="service-icon">
+						<img src="{% static "web/4.png" %}" alt="1">
+					</div>
+					<div class="service-content">
+						<h4>Online Booking</h4>
+						<p>Life is VeryFast and we have to develop ourselves by using technology!,We implemented online bokking system of books.</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-6 service-item">
+					<div class="service-icon">
+						<img src="{% static "web/5.png" %}"  alt="1">
+					</div>
+					<div class="service-content">
+						<h4>Returning </h4>
+						<p>Return Your books easilya and Have your personal database Of your Completed books.</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-sm-6 service-item">
+					<div class="service-icon">
+						<img src="{% static "web/2.png" %}" alt="1">
+					</div>
+					<div class="service-content">
+						<h4>Security</h4>
+						<p>We created Database of postgresql and Powerfulbackend Framework Django.Thsese provides Security and User Sessions.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Services section end -->
+
+	
+	
+
+	<!-- Courses section -->
+	<section class="courses-section spad">
+		<div class="container">
+			<div class="section-title text-center">
+				<h3>OUR COURSES</h3>
+				<p>Building a better world, one course at a time</p>
+			</div>
+			<div class="row">
+                <!-- course item -->
+                {% for i in al %}
+				<div class="col-lg-3 col-md-6 course-item">
+					<div class="course-thumb">
+						<img src="{{i.img.url}}" alt="">
+						<div class="course-cat">
+							<span><a class= "mya" href="{{i.url}}">{{i.name}}</a></span>
+						</div>
+					</div>
+                </div>
+                {% endfor %}
+			</div>
+		</div>
+	</section>
+	<!-- Courses section end-->
+
+
+	
+
+	
+
+	
+{% endblock %}

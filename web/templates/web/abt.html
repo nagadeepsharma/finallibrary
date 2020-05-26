@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>TAGG | About us</title>
+    <link rel="stylesheet" href="{%static 'myuser/style2.css'%}">
+	<link rel="stylesheet" href="{%static 'myuser/style.css'%}">
+	 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  </head>
+  <body>
+	<div class="toggle">&times;</div>
+    <nav id="nav">
+     <ul class="left-ul">
+         <li><img src="{% static "myuser/logo.png" %}"></li>
+     </ul>
+     <ul class="right-ul">
+        {% if user.is_authenticated %} 
+        <li><form method="POST" action="{% url 'logoutuser' %}">
+            {% csrf_token %}
+            <button type="submit"class="button_1">logout</button>
+        </form></li>
+        {% endif %}
+         <li><a href="abt">About Us</a></li>
+         
+         <li><a href="">Cart/Order</a></li>
+         <li><a href="#aim">Our Aims</a></li>
+         <li><a href="">Hello! {{user.username}}</a></li>
+
+     </ul>
+    </nav>
+    
+
+<section class="team">
+    <div class="container">
+          <div class="card">
+                <div class="box">
+                  <img src="{% static "myuser/three.JPG" %}">
+                      <h4>Vignesh Dugyala</h4>
+                      <h5>Project Manager</h5>
+                </div>
+          </div>
+          <div class="card">
+                <div class="box">
+                        <img src="{% static "myuser/two.JPG" %}">
+                      <h4>Nagadeep Sharma</h4>
+                      <h5>Project Archivist</h5>
+                </div>
+          </div>
+          <div class="card">
+                <div class="box">
+                      <img src="{% static "myuser/four.JPG" %}">
+                      <h4>Durga</h4>
+                      <h5>Communication Officer</h5>
+                </div>
+          </div>
+          <div class="card">
+                <div class="box">
+                        <img src="{% static "myuser/one.JPG" %}">
+                      <h4>Keerthi Swaroop</h4>
+                      <h5>Financial Officer</h5>
+                </div>
+          </div>
+    </div>
+</section>
+<script>
+    
+     let btn = document.querySelector(".toggle");
+         btn.addEventListener("click", function(){
+             let righttUl = document.querySelector(".right-ul");
+             if(righttUl.style.display === "none"){
+                 righttUl.style.display = "block";
+             } else {
+                righttUl.style.display = "none";
+             }
+         })
+
+    </script>
+
+</body>
+</html>

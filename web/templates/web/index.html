@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Welcome</title>
+<!-- Custom Theme files -->
+<link href="{% static "web/style1.css" %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="keywords" content="Flat Lebet Form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Roboto:500,900italic,900,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+<!---Google Analytics Designmaz.net-->
+</head>
+<body>
+<!--subscribe start here-->
+<h1><img src="{% static "web/logo.png" %}" width="220px"><img></h1>
+<div class="login-main">
+	<div class="login">
+		<div class="social">
+            {{error}}
+           </div>
+	   <form method="POST">
+            {% csrf_token %} 
+            {{form.as_p}}
+	   <ul class="button">
+	    	<li><input type="submit" value="Login" ></li>
+	   	    
+	   </ul>
+           </form>
+           
+            <ul class="button">
+                <li><a href="signup">don't have an Account</a></li>
+                </ul>
+           
+
+<!--subscribe end here-->	
+</body>
+</html>

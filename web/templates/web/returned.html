@@ -1,0 +1,26 @@
+{% extends 'web/base.html' %}
+{% block content %}
+	<section class="courses-section spad">
+		<div class="container">
+			<div class="section-title text-center">
+			</div>
+			<div class="row">
+                <!-- course item -->
+                {% for i in data %}
+				<div class="col-lg-3 col-md-6 course-item">
+					<div class="course-thumb">
+						<img src="{{i.img.url}}" alt="">
+						<div class="course-cat">
+                            <span>{{i.id}}.{{i.name}}</span>
+                            
+                        </div>
+                        
+                    </div>
+                    <h5>{{i.datecompleted}}</h5>
+                </div>
+                {% endfor %}
+			</div>
+		</div>
+    </section>
+    {% endblock %}
+	<!-- Courses section end-->
