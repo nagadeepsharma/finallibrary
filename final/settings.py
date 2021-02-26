@@ -76,11 +76,8 @@ WSGI_APPLICATION = 'final.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'final',
-        'PASSWORD':'pandu',
-        'USER':'postgres',
-        'HOST':'localhost',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -127,8 +124,8 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
-EMAIL_HOST_USER='nagadeep.33@gmail.com'
+EMAIL_HOST_USER='nagadeep.chandragiri@gmail.com'
 EMAIL_HOST_PORT=587
-EMAIL_HOST_PASSWORD='nagadeep33'
+EMAIL_HOST_PASSWORD='mylifedad143'
 EMAIL_USE_TLS=True
 
